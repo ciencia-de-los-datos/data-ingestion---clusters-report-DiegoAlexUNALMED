@@ -74,4 +74,5 @@ def ingest_data():
             entrada_procesada.append(fila)
     df = pd.DataFrame(entrada_procesada, columns = campos)
     df["cluster"] = df["cluster"].astype("int32")
+    df["cantidad_de_palabras_clave"] = df["cantidad_de_palabras_clave"].astype("int32")
     return df
