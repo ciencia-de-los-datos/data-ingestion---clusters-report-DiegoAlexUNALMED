@@ -73,4 +73,5 @@ def ingest_data():
                         break
             entrada_procesada.append(fila)
     df = pd.DataFrame(entrada_procesada, columns = campos)
+    df["cluster"] = df["cluster"].astype("int32")
     return df
