@@ -75,4 +75,5 @@ def ingest_data():
     df = pd.DataFrame(entrada_procesada, columns = campos)
     df["cluster"] = df["cluster"].astype("int32")
     df["cantidad_de_palabras_clave"] = df["cantidad_de_palabras_clave"].astype("int32")
+    df["porcentaje_de_palabras_clave"] = df["porcentaje_de_palabras_clave"].map(lambda x: x.replace(",",".")).astype("float64")
     return df
